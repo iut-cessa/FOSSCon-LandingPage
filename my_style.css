@@ -22,8 +22,8 @@ body {
 }
 
 header .intro-text,.row ,.container.row,.section-heading {
-    
- font-family: Yekan;   
+
+ font-family: Yekan;
 }
 
 
@@ -51,17 +51,17 @@ hr {
     margin-top: 70px !important;
 }
 
-.intro-lead-in {   
+.intro-lead-in {
     margin-bottom: 25px;
-        font-size: 40px;
-        line-height: 40px;
+    font-size: 40px;
+    line-height: 40px;
 }
 
 .center-text {
     text-align: center;
 }
 .row {
- margin-left: 0px;   
+    margin-left: 0px;
 }
 .workshops img{
     margin: auto;
@@ -74,7 +74,7 @@ hr {
 }
 
 .MyTimeline{
-     border: 4px solid #fed136 !important;
+    border: 4px solid rgb(54, 158, 67) !important;
 }
 .myClient{
     text-align: center;
@@ -88,8 +88,9 @@ hr {
     font-weight: 400;
     text-align: center;
 }
+
 @media(min-width: 768px){
-    .navbar-nav > li{
-    float: right;
-}
+    .navbar-nav > li {
+        float: right;
+    }
 }
