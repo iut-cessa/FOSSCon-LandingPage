@@ -96,14 +96,20 @@ hr {
     }
 }
 
-
-
 #map-iframe {
     width: 1px;
     min-width: 100%;
     *width: 100%;
 }
+
 .logo{
- height: 25%;
+    height: 25%;
     width: 25%;
+}
+
+@media(max-width: 768px) {
+    .logo {
+        height: 50%;
+        width: 50%;
+    }
 }
