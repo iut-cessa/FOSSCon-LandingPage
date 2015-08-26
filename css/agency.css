@@ -649,68 +649,69 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#contact {
+section#register {
     background-color: #222;
     background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-section#contact .section-heading {
+section#register .section-heading,
+section#register .section-subheading {
     color: #fff;
 }
 
-section#contact .form-group {
+section#register .form-group {
     margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
+section#register .form-group input,
+section#register .form-group textarea {
     padding: 20px;
 }
 
-section#contact .form-group input.form-control {
+section#register .form-group input.form-control {
     height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+section#register .form-group textarea.form-control {
     height: 236px;
 }
 
-section#contact .form-control:focus {
+section#register .form-control:focus {
     border-color: rgb(54, 158, 67);
     box-shadow: none;
 }
 
-section#contact::-webkit-input-placeholder {
+section#register::-webkit-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-moz-placeholder {
+section#register:-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact::-moz-placeholder {
+section#register::-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-ms-input-placeholder {
+section#register:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact .text-danger {
+section#register .text-danger {
     color: #e74c3c;
 }
 
