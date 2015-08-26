@@ -46,11 +46,6 @@ hr {
     font-size: 3em;
 }
 
-.myheading  {
-    font-family: Yekan;
-    margin-top: 70px !important;
-}
-
 .intro-lead-in {
     margin-bottom: 25px;
     font-size: 40px;
@@ -94,6 +89,12 @@ hr {
         float: right;
     }
 }
+@media(min-width: 768px){
+    .myheading  {
+    font-family: Yekan;
+    margin-top: 70px !important;
+    }
+}
 
 
 
@@ -101,4 +102,8 @@ hr {
     width: 1px;
     min-width: 100%;
     *width: 100%;
+}
+.logo{
+ height: 25%;
+    width: 25%;
 }

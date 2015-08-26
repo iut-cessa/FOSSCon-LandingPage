@@ -48,7 +48,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">IUT FOSS Con</a>
+                <div class="navbar-brand page-scroll">
+                    <a href="#page-top">IUT FOSS Con</a>
+                                    </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,7 +85,13 @@
     <!-- Header -->
     <header>
         <div class="container">
+<!--
+            <div class="logo">
+                
+            </div>
+-->
             <div class="intro-text">
+                <img class="logo" src="img/logos/IUT_FOSS_Con_LOGO.png" />
                 <div class="intro-heading">اولین گردهمایی نرم افزارهای آزاد/متن باز</div>
                 <div class="intro-lead-in">دانشگاه صنعتی اصفهان</div>
                 <div class="page-scroll">
@@ -345,25 +353,34 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
+
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <input type="text" class="form-control" placeholder="نام ونام خانوادگی *" id="name" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="پست الکترونیک *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="شماره تلفن *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="IUTStd" type="checkbox" name="IUTstudent" onchange="IUTCBChange()"><span style="margin-right:15px;">دانشجوی صنعتی اصفهان هستم</span></label>
+                                    </div>
+                                </div>
+                                <div id="Stdnum" class="form-group hide">
+                                    <input id="stdnum" type="number" class="form-control" placeholder=" شماره دانشجویی *" maxlength="7" minlength="7" data-validation-required-message="Please enter your student number. ">
+                                    <p class="help-block text-danger"></p>
+
+                                </div>
                             </div>
-                            <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
                                 <button type="submit" class="btn btn-xl">Send Message</button>
@@ -572,6 +589,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/javascript.js"></script>
 
 </body>
 
