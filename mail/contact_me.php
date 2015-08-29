@@ -12,7 +12,7 @@ function generateRandomString($length = 15) {
 
 $servername = 'localhost';
 $username = 'fosscon';
-$password = 'sefri92';
+$password = 'pass';
 $dbname = 'fosscon';
 
 $con = new mysqli($servername, $username, $password, $dbname);
