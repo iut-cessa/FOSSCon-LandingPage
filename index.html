@@ -349,7 +349,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" id="contactForm" method="post" action="mail/contact_me.php" novalidate>
                         <div class="row">
                             <div class="col-md-6 col-lg-offset-3">
                                 <div class="form-group">
@@ -371,14 +371,14 @@
                                     </div>
                                 </div>
                                 <div id="Stdnum" class="form-group hide">
-                                    <input id="stdnum" type="number" class="form-control" placeholder=" شماره دانشجویی *" maxlength="7" minlength="7" data-validation-required-message="Please enter your student number. ">
+                                    <input id="stdnum" name="stdnum" type="number" class="form-control" placeholder=" شماره دانشجویی *" maxlength="7" minlength="7" data-validation-required-message="Please enter your student number. ">
                                     <p class="help-block text-danger"></p>
 
                                 </div>
                             </div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl">Register</button>
                             </div>
                         </div>
                     </form>

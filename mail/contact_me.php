@@ -1,4 +1,5 @@
 <?php
+require_once('config.php');
 
 function generateRandomString($length = 15) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
@@ -10,22 +11,16 @@ function generateRandomString($length = 15) {
     return $randomString;
 }
 
-$servername = 'localhost';
-$username = 'fosscon';
-$password = 'pass';
-$dbname = 'fosscon';
-
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {
     die('Connection failed! ' . $con->connect_error);
 }
 
-
 // Check for empty fields
 if(empty($_POST['name'])        ||
    empty($_POST['email']) 		||
    empty($_POST['phone']) 		||
-   empty($_POST['stdnum'])      ||
+  //  empty($_POST['stdnum'])      ||
    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
        echo "No arguments Provided!";
@@ -54,7 +49,7 @@ while(true){
 $query = sprintf('insert into users (name, email, phone, stdnum, uniqid) values ("%s", "%s", "%s", "%s", "%s")', $name, $email, $phone, $stdnum, $uniqid);
 
 if ($con->query($query) === true) {
-    echo 'query succeed';
+    echo $uniqid;
 } else {
     echo "ERROR: " . $con->error;
 }
