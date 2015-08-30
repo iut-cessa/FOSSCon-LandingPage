@@ -10,22 +10,18 @@ function generateRandomString($length = 15) {
     return $randomString;
 }
 
-$servername = 'localhost';
-$username = 'fosscon';
-$password = 'pass';
-$dbname = 'fosscon';
+require_once('config.php');
 
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {
     die('Connection failed! ' . $con->connect_error);
 }
 
-
 // Check for empty fields
 if(empty($_POST['name'])        ||
    empty($_POST['email']) 		||
    empty($_POST['phone']) 		||
-   empty($_POST['stdnum'])      ||
+   // empty($_POST['stdnum'])      ||
    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
        echo "No arguments Provided!";
@@ -56,8 +52,12 @@ $query = sprintf('insert into users (name, email, phone, stdnum, uniqid) values 
 if ($con->query($query) === true) {
     echo 'query succeed';
 } else {
-    echo "ERROR: " . $con->error;
+    die("ERROR: " . $con->error);
 }
+
+// redirect to user's page
+header('Location: ' . '/user/' . $uniqid);
+die();
 
 $con->close();
 

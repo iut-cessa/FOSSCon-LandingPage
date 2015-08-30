@@ -4,12 +4,12 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-@font-face{
+/*@font-face{
     font-family='yekan';
      src:url('fonts/Yekan.eot?#') format('eot'),
           url('fonts/Yekan.woff') format('woff'),
           url('fonts/Yekan.ttf') format('truetype');
-}
+}*/
 
 body {
     overflow-x: hidden;
@@ -261,7 +261,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
+        font-size: 3em;
     }
 }
 

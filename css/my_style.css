@@ -1,11 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
 @font-face {
     font-family:"Yekan";
-    src: url(fonts/Yekan.eot);
-    src: url(fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(fonts/Yekan.woff)
-    format("woff"), url(fonts/Yekan.ttf) format("truetype"), url(fonts/Yekan.svg#BYekan) format("svg");
+    src: url(../fonts/Yekan.eot);
+    src: url(../fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(../fonts/Yekan.woff)
+    format("woff"), url(../fonts/Yekan.ttf) format("truetype"), url(../fonts/Yekan.svg#BYekan) format("svg");
     font-weight: normal;
     font-style: normal
 }
+
 
 @font-face{
     font-family: "BMorvarid";
@@ -15,6 +18,7 @@
 body {
     direction: rtl;
 }
+
 .nav li a{
     font-family: Yekan;
     font-size: 21px;
@@ -40,7 +44,8 @@ hr {
     height: 1%;
 }
 .navbar-default .navbar-brand{
-    font-size: 3em;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 3.5em;
 }
 
 .intro-lead-in {
@@ -111,3 +116,15 @@ hr {
         width: 50%;
     }
 }
+
+.copy-left {
+    display: inline-block;
+    text-align: right;
+    margin: 0px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+ }
