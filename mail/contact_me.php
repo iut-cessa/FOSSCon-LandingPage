@@ -10,8 +10,11 @@ function generateRandomString($length = 15) {
     return $randomString;
 }
 
+<<<<<<< HEAD
 require_once('config.php');
 
+=======
+>>>>>>> 30ab0b78f6c5c1db693949bccd65da6cbd7be66b
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {
     die('Connection failed! ' . $con->connect_error);
@@ -21,7 +24,11 @@ if ($con->connect_error) {
 if(empty($_POST['name'])        ||
    empty($_POST['email']) 		||
    empty($_POST['phone']) 		||
+<<<<<<< HEAD
    // empty($_POST['stdnum'])      ||
+=======
+  //  empty($_POST['stdnum'])      ||
+>>>>>>> 30ab0b78f6c5c1db693949bccd65da6cbd7be66b
    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
        echo "No arguments Provided!";
@@ -50,7 +57,7 @@ while(true){
 $query = sprintf('insert into users (name, email, phone, stdnum, uniqid) values ("%s", "%s", "%s", "%s", "%s")', $name, $email, $phone, $stdnum, $uniqid);
 
 if ($con->query($query) === true) {
-    echo 'query succeed';
+    echo $uniqid;
 } else {
     die("ERROR: " . $con->error);
 }

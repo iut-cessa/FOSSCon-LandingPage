@@ -125,6 +125,9 @@
                 <div class="col-lg-12 text-right">
                     <h2 class="section-heading">FOSS چیه؟</h2>
                     <h3 class="section-subheading text-muted">Open Source Software</h3>
+                    <p>
+                      <strong>FOSS</strong> یا <strong>Free/Open Source Software</strong> یعنی نرم افزارهای آزاد و نرم افزارهای کد باز. به عبارتی FOSS نمایانگر دو نوع نرم افزار می‌باشد یکی نرم افزارهای آزاد (Free) و دیگری نرم افزارهای کد باز (Open Source).
+                    </p>
                 </div>
             </div>
         </div>
@@ -317,7 +320,7 @@
         <div class="row">
             <div class="col-md-3 myClient">
                 <a href="#">
-                    <img src="img/logos/IUT.png" width="150px" height="150px">
+                    <img src="img/logos/seytare_256x256.png" width="150px" height="150px">
                 </a>
             </div>
             <div class="col-md-3 myClient">
@@ -349,7 +352,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" id="contactForm" method="post" action="mail/contact_me.php" novalidate>
                         <div class="row">
                             <div class="col-md-6 col-lg-offset-3">
                                 <div class="form-group">
@@ -371,14 +374,14 @@
                                     </div>
                                 </div>
                                 <div id="Stdnum" class="form-group hide">
-                                    <input id="stdnum" type="number" class="form-control" placeholder=" شماره دانشجویی *" maxlength="7" minlength="7" data-validation-required-message="Please enter your student number. ">
+                                    <input id="stdnum" name="stdnum" type="number" class="form-control" placeholder=" شماره دانشجویی *" maxlength="7" minlength="7" data-validation-required-message="Please enter your student number. ">
                                     <p class="help-block text-danger"></p>
 
                                 </div>
                             </div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl">Register</button>
                             </div>
                         </div>
                     </form>

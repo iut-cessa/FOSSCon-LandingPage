@@ -25,15 +25,22 @@ $(function() {
                     name: name,
                     phone: phone,
                     email: email,
+                    stdnum: stdnum,
                 },
                 cache: false,
-                success: function() {
+                success: function(data) {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
+<<<<<<< HEAD
                         .append("<strong>اطلاعات شما با موفقیت ثبت شد.</strong>");
+=======
+                        .append("<strong>You have been registered. </strong><br />Complete registeration here: ");
+                    $('#success > .alert-success')
+                        .append("<a href='edit.php?id=" + data + "'>edit.php?id=" + data + "</a>")
+>>>>>>> 30ab0b78f6c5c1db693949bccd65da6cbd7be66b
                     $('#success > .alert-success')
                         .append('</div>');
 
