@@ -14,7 +14,7 @@ require_once('config.php');
 
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {
-    die('Connection failed! ' . $con->connect_error);
+    die('Connection to db failed! ' . $con->connect_error);
 }
 
 // Check for empty fields
@@ -55,10 +55,10 @@ if ($con->query($query) === true) {
     die("ERROR: " . $con->error);
 }
 
-// redirect to user's page
-header('Location: ' . '/user/' . $uniqid);
-die();
-
 $con->close();
+
+// redirect to user's page
+header('Location: ' . '/mail/user.php?id=' . $uniqid);
+die();
 
 ?>
