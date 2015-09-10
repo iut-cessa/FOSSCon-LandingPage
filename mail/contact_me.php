@@ -38,6 +38,7 @@ $uniqid = generateRandomString();
 $query = "select * from users where email='".$email."'";
 if ($con->query($query)->num_rows >= 1) {
     die('Email duplicate.');
+    return false;
 }
 
 while(true){
