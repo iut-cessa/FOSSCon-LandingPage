@@ -35,13 +35,14 @@ $(function() {
                         .append("</button>");
                     $('#success > .alert-success')
                         .append("<strong>اطلاعات شما با موفقیت ثبت شد.</strong>");
-                    $('#success > .alert-success')
-                        .append("<a href='edit.php?id=" + data + "'>edit.php?id=" + data + "</a>")
+                    // $('#success > .alert-success')
+                    //     .append("<a href='edit.php?id=" + data + "'>edit.php?id=" + data + "</a>")
                     $('#success > .alert-success')
                         .append('</div>');
 
                     //clear all fields
                     // $('#contactForm').trigger("reset");
+                    window.location.href = 'user.php?id=' + data;
                 },
                 error: function() {
                     // Fail message

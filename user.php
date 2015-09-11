@@ -12,22 +12,35 @@ if ($con->connect_error) {
     die('Connection to db failed! ' . $con->connect_error);
 }
 
+// check for user existance
+$query = 'select * from users where uniqid="' . $_GET['id'] . '"';
+if ($con->query($query)->num_rows != 1) {
+    die("user not found");
+}
+
+// get free seats
+$free_seats = array(0, 30, 30, 30, 30, 30);
+for ($i = 1; $i <= 5; $i++) {
+    $query = 'select * from users where workshop_num="' . $i . '"';
+    $free_seats[$i] -= $con->query($query)->num_rows; // no error checking
+}
+
 if (!empty($_POST['workshop'])) {
     // workshop has been chosen
     echo $_POST['workshop'];
-
-    $query = 'update users set workshop_num=' . $_POST['workshop'] . ' where uniqid="' . $_GET['id'].'"';
-    $con->query($query);
-    if ($con->affected_rows == 1) {
-     echo 'workshop updated';
+    if ($free_seats[$_POST['workshop']] > 0) {
+        $query = 'update users set workshop_num=' . $_POST['workshop'] . ' where uniqid="' . $_GET['id'] . '"';
+        $con->query($query);
+        if ($con->affected_rows == 1) {
+            echo ' workshop updated';
+        } else {
+            die('workshop update failed: ' . $con->error);
+        }
     } else {
-     die('workshop update failed: ' . $con->error);
+        echo 'no free seats for workshop num ' . $_POST['workshop'];
     }
-
     return false;
 }
-
-
 
 $query = 'select * from users where uniqid="' . $_GET['id'] . '"';
 // print_r($con->query($query)->fetch_array()['email']);
@@ -61,10 +74,10 @@ $phone = $arr['phone'];
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'> -->
     <link href="css/my_style.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet">
 
@@ -97,8 +110,18 @@ $phone = $arr['phone'];
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">سلام <?php echo $name ?>.</h2>
-                    <h3 class="section-subheading text-muted">register</h3>
+                    <h2 class="section-heading">انتخاب کارگاه</h2>
+                    <h3 class="section-subheading text-muted">
+                        یکی از کارگاه های زیر را انتخاب کنید
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p id="userinfo">
+                        کاربر:
+                        <?php echo $name ?>
+                    </p>
                 </div>
             </div>
             <div class="row">
@@ -107,25 +130,80 @@ $phone = $arr['phone'];
                         <div class="row">
                             <div class="col-md-6 col-lg-offset-3">
                                 <div class="form-group radio">
-                                    <label><input type="radio" value="0" name="workshop">Linux</label>
+                                    <input type="radio" id="linux" value="1" name="workshop" <?php echo $free_seats[1] <= 0 ? "disabled" : "" ?> >
+                                    <label for="linux">Linux</label>
+                                    <span>
+                                        ظرفیت باقی مانده:
+                                        <?php echo $free_seats[1] ?>
+                                    </span>
                                 </div>
                                 <div class="form-group radio">
-                                    <input type="radio" class="form-control" value="1" name="workshop">Laravel
+                                    <input type="radio" id="laravel" value="2" name="workshop" <?php echo $free_seats[2] <= 0 ? "disabled" : "" ?> >
+                                    <label for="laravel">Laravel</label>
+                                    <span>
+                                        ظرفیت باقی مانده:
+                                        <?php echo $free_seats[2] ?>
+                                    </span>
                                 </div>
                                 <div class="form-group radio">
-                                    <input type="radio" class="form-control" value="2" name="workshop">Golang
+                                    <input type="radio" id="golang" value="3" name="workshop" <?php echo $free_seats[3] <= 0 ? "disabled" : "" ?> >
+                                    <label for="golang">Golang</label>
+                                    <span>
+                                        ظرفیت باقی مانده:
+                                        <?php echo $free_seats[3] ?>
+                                    </span>
                                 </div>
                                 <div class="form-group radio">
-                                    <input type="radio" class="form-control" value="3" name="workshop">Angular.js
+                                    <input type="radio" id="angularjs" value="4" name="workshop" <?php echo $free_seats[4] <= 0 ? "disabled" : "" ?> >
+                                    <label for="angularjs">Angular.js</label>
+                                    <span>
+                                        ظرفیت باقی مانده:
+                                        <?php echo $free_seats[4] ?>
+                                    </span>
                                 </div>
                                 <div class="form-group radio">
-                                    <input type="radio" class="form-control" value="4" name="workshop">Embedded Systems
+                                    <input type="radio" id="embedded" value="5" name="workshop" <?php echo $free_seats[5] <= 0 ? "disabled" : "" ?> >
+                                    <label for="embedded">Embedded Systems</label>
+                                    <span>
+                                        ظرفیت باقی مانده:
+                                        <?php echo $free_seats[5] ?>
+                                    </span>
                                 </div>
                                 <input type="submit" class="btn btn-lg btn-success" value="پرداخت">
                             </div>
                         </div>
                     </form>
-
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-push-2">
+                    <ul id="workshop-p">
+                        <li>
+                            کارگاه ها به صورت موازی برگزار می شوند. بدیهی است هر نفر فقط در یک کارگاه میتواند شرکت کند.
+                        </li>
+                        <li>
+                            زمان برگزاری کارگاه ها ۹:۳۰ تا ۱۳:۳۰ است.
+                        </li>
+                        <li>
+                            هزینه حضور در هر کارگاه،
+                            <em>۱۵ هزار تومان</em>
+                            برای دانشجویان دانشگاه صنعتی اصفهان و برای بقیه شرکت کنندگان،
+                            <em>۲۰ هزار تومان </em>
+                            است.
+                        </li>
+                        <li>
+                            برای شرکت کنندگان در کارگاه ها، ناهار، پذیرایی، یک توزیع لینوکس بر روی یک فلش مموری و امکانات دیگر در قالب یک پوشه از طرف تیم برگزاری در نظر گرفته شده که به آنان تقدیم خواهد شد.
+                        </li>
+                        <li>
+                            هنگام پذیرش قبل از کارگاه ها، کارت شناسایی همراه داشته باشید.
+                        </li>
+                        <li>
+                            پس از پرداخت و پایان ثبت نام، ایمیلی مبنی بر تایید ثبت نام برای شما ارسال خواهد شد.
+                            در صورت عدم دریافت آن، مشکل را با پشتیبانی از طریق ایمیل
+                            <a href="mailto: info@fosscon.iut.ac.ir">info@fosscon.iut.ac.ir</a>
+                            در میان بگذارید.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

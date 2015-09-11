@@ -34,7 +34,7 @@ $phone = $_POST['phone'];
 $stdnum = $_POST['stdnum'];
 $uniqid = generateRandomString();
 
-$query = "select * from users where email='".$email."'";
+$query = "select * from users where email='" . $email . "'";
 if ($con->query($query)->num_rows >= 1) {
     die('Email duplicate.');
 }
@@ -58,7 +58,7 @@ if ($con->query($query) === true) {
 $con->close();
 
 // redirect to user's page
-header('Location: ' . '/mail/user.php?id=' . $uniqid);
-die();
+// header('Location: ' . '../user.php?id=' . $uniqid);
+// die();
 
 ?>
