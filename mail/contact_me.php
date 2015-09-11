@@ -15,6 +15,7 @@ require_once('config.php');
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {
     die('Connection to db failed! ' . $con->connect_error);
+    return false;
 }
 
 // Check for empty fields
@@ -37,6 +38,7 @@ $uniqid = generateRandomString();
 $query = "select * from users where email='" . $email . "'";
 if ($con->query($query)->num_rows >= 1) {
     die('Email duplicate.');
+    return false;
 }
 
 while(true){
