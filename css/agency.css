@@ -649,7 +649,7 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#register {
+/*section#register {
     background-color: #222;
     background-image: url(../img/map-image.png);
     background-position: center;
@@ -713,7 +713,7 @@ section#register:-ms-input-placeholder {
 
 section#register .text-danger {
     color: #e74c3c;
-}
+}*/
 
 footer {
     padding: 25px 0;
