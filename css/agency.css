@@ -649,14 +649,14 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#register {
+sectionter {
     background-color: #222;
     background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-section#register .section-heading,
+/*section#register .section-heading,
 section#register .section-subheading {
     color: #fff;
 }
@@ -713,7 +713,7 @@ section#register:-ms-input-placeholder {
 
 section#register .text-danger {
     color: #e74c3c;
-}
+}*/
 
 footer {
     padding: 25px 0;
