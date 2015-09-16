@@ -6,4 +6,9 @@ function IUTCBChange(){
         $('#Stdnum').attr('class', 'form-group show');
         $('#stdnum').prop('required', true);
     }
-}
+};
+
+function frame_builder() {
+    // Check function
+    // $('#test').text('test');
+};
