@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@font-face {
+    font-family: "Yanone Kaffeesatz";
+    src: url(../fonts/yanone-kaffeesatz.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family:"Yekan";
@@ -12,7 +17,7 @@
 
 @font-face{
     font-family: "BMorvarid";
-    src: url('fonts/BMorvarid.ttf');
+    src: url('../fonts/BMorvarid.ttf');
 }
 
 body {
@@ -127,7 +132,11 @@ hr {
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
- }
+}
+
+#register {
+    padding-bottom: 0;
+}
 
 @media screen and (max-width: 5000px) {
     #ifrm {
