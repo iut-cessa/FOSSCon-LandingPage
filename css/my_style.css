@@ -134,9 +134,9 @@ hr {
     -ms-filter: "FlipH";
 }
 
-#register {
+/*#register {
     padding-bottom: 0;
-}
+}*/
 
 @media screen and (max-width: 5000px) {
     #ifrm {
