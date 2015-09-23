@@ -181,5 +181,11 @@ hr {
 }
 
 .team-member-img {
-    width: 225px;    
+    width: 225px;
+}
+
+.ticket_iframe {
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
 }
