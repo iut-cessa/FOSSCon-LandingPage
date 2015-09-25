@@ -335,10 +335,10 @@ section h3.section-subheading {
     text-transform: none;
 }
 
-#portfolio .portfolio-item {
+/*#portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
-}
+}*/
 
 #portfolio .portfolio-item .portfolio-link {
     display: block;
@@ -404,12 +404,6 @@ section h3.section-subheading {
 
 #portfolio * {
     z-index: 2;
-}
-
-@media(min-width:767px) {
-    #portfolio .portfolio-item {
-        margin: 0 0 30px;
-    }
 }
 
 .timeline {
