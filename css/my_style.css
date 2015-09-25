@@ -196,3 +196,58 @@ hr {
     font-size: 15px;
     line-height: 30px;
 }
+
+
+
+
+
+
+.panel-heading [data-toggle="collapse"]:after {
+  font-family: 'Glyphicons Halflings';
+  content: "\f04b"; /* "play" icon */
+  float: right;
+  /*color: #F58723;*/
+  color: rgb(54, 158, 67);
+  font-size: 18px;
+  line-height: 22px;
+  /* rotate "play" icon from > (right arrow) to down arrow */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+  /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: #454444;
+}
+
+.panel-title-text {
+  margin-right: 10px;
+}
+
+.panel-title-text:hover {
+  color: rgb(54, 158, 67);
+}
+
+.panel-title a:hover {
+  color: rgb(54, 158, 67);
+}
+
+.panel-title a:active {
+  color: rgb(54, 158, 67);
+}
+
+.panel-title a:visited {
+  color: rgb(54, 158, 67);
+}
+
+.panel {
+  font-family: Yekan;
+}
