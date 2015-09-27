@@ -251,3 +251,7 @@ hr {
 .panel {
   font-family: Yekan;
 }
+
+.portfolio-caption p {
+    font-family: Yekan !important;
+}
